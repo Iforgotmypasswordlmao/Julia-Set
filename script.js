@@ -93,7 +93,8 @@ function run()
             {
                 if ( ( zrs + zis ) >= escape_radius_square )
                 {
-                    context.fillStyle = `rgb(${t*2},${3*t},${t*1.5})`
+                    const newT = t + 1 - Math.log(Math.log(zrs + zis))/Math.log(2)
+                    context.fillStyle = `rgb(${newT*2},${newT*3},${newT*1.5})`
                     context.fillRect(i, j, 1, 1)
                     break
                 }
